@@ -1,3 +1,16 @@
+// Obtener la lista de años
+export function getYearsList(){
+    const actualYear = new Date().getFullYear();
+    var listYears = [];
+    listYears.push(actualYear + 1);
+    var yearResult;
+    for(let i = 0; i <= 10; i++){
+        yearResult = actualYear - i;
+        listYears.push(yearResult);
+    }
+    return listYears;
+}
+
 // Obtener la diferencia de años
 export function getDifferenceYear(year) {
     return new Date().getFullYear() - year;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { getDifferenceYear, calculateBrand, getPlan } from '../helper';
+import { getYearsList, getDifferenceYear, calculateBrand, getPlan } from '../helper';
 
 const Field = styled.div`
     display:flex;
@@ -113,10 +113,10 @@ const Form = ({ setSummary, setLoad }) => {
             });
             
         }, 3000);
-        
-        
-
+    
     }
+
+    const years = getYearsList();
 
     return (
         <form
@@ -145,18 +145,15 @@ const Form = ({ setSummary, setLoad }) => {
                     onChange={getInformation}
                 >
                     <option value="">-- Seleccione --</option>
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
-                    <option value="2017">2017</option>
-                    <option value="2016">2016</option>
-                    <option value="2015">2015</option>
-                    <option value="2014">2014</option>
-                    <option value="2013">2013</option>
-                    <option value="2012">2012</option>
+                    {years.map(y =>
+                        <option
+                            key={y}
+                            value={y}
+                        >{y}</option>
+                    )}
                 </Select>
             </Field>
+
 
             <Field>
                 <Label>Plan</Label>

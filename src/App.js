@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from '@emotion/styled';
 import Header from './components/Header';
 import Form from './components/Form';
@@ -49,14 +49,14 @@ function App() {
         
         {!load
           ?
-            <div>
+            <Fragment>
               <Summary
                 data={data}
               />
               <Result
                 quote={quote}
               />
-            </div>
+            </Fragment>
           :
             null
         }

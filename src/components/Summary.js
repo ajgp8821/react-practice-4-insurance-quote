@@ -22,7 +22,7 @@ const Summary = ({ data }) => {
 
     return (
         <SummaryContainer>
-            <h2>Resument de cotización</h2>
+            <h2>Resumen de cotización</h2>
             <ul>
                 <li>Marca: {firstCapital(tBrand)}</li>
                 <li>Año: {year}</li>
